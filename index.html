@@ -147,22 +147,18 @@
   .expand-btn.open svg{transform:rotate(180deg)}
 
   /* tool groups */
-  .tool-group{background:var(--surface);border:1px solid var(--border);border-radius:13px;overflow:hidden;margin-bottom:10px}
-  .tg-head{width:100%;background:transparent;border:none;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 16px;font-family:var(--sans);transition:.15s}
-  .tg-head:hover{background:rgba(255,102,0,.04)}
-  .tg-label{flex:1;font-size:14px;font-weight:500;text-align:left}
-  .tg-count{font-family:var(--mono);font-size:11px;color:var(--dim)}
-  .tg-chev{width:15px;height:15px;color:var(--dim);flex:none;transition:transform .2s}
-  .tg-head.open .tg-chev{transform:rotate(180deg)}
-  .tg-body{display:none;border-top:1px solid var(--border)}
-  .tg-body.open{display:block}
-  .tool-row{display:flex;align-items:center;gap:10px;padding:12px 16px;text-decoration:none;border-bottom:1px solid var(--border);transition:.15s}
-  .tool-row:last-child{border-bottom:none}
-  .tool-row:hover{background:rgba(255,102,0,.04)}
-  .tool-row:hover .tool-name{color:var(--signal)}
-  .tool-name{flex:1;font-size:14px;color:var(--text);transition:.15s}
-  .tool-ext{color:var(--dim);flex:none}
-  .tool-ext svg{width:14px;height:14px;display:block}
+  .cat-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:6px;margin-bottom:10px}
+  .cat-label .tick{color:var(--signal)}
+  .clist{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+  .crow{display:flex;align-items:center;gap:14px;padding:13px 16px;text-decoration:none;transition:background .15s;position:relative}
+  .crow:not(:last-child)::after{content:"";position:absolute;bottom:0;left:16px;right:16px;height:1px;background:rgba(255,255,255,.06)}
+  .crow:hover{background:rgba(255,255,255,.03)}
+  .ctile{flex-shrink:0;width:44px;height:44px;border-radius:10px;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--signal)}
+  .cinfo{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+  .cname{font-size:14px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cdom{font-size:11.5px;color:var(--muted);font-family:var(--mono)}
+  .cpill{flex-shrink:0;display:inline-flex;align-items:center;padding:6px 11px;border:1px solid rgba(255,102,0,.45);border-radius:10px;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--signal);white-space:nowrap;transition:border-color .15s,background .15s}
+  .crow:hover .cpill{border-color:rgba(255,102,0,.75);background:rgba(255,102,0,.06)}
 
   /* footer */
   footer{margin-top:46px;text-align:center;border-top:1px solid var(--border);padding-top:22px}
@@ -293,26 +289,23 @@
   <!-- 6. TOOLS I USE -->
   <section id="tools">
     <div class="label"><span class="tick">//</span> tools i use</div>
-    <div class="tool-group">
-      <button class="tg-head" onclick="toggleGroup(this)">
-        <span class="tg-label">Voice Input</span>
-        <span class="tg-count">3 tools</span>
-        <svg class="tg-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="tg-body">
-        <a class="tool-row" href="https://wisprflow.ai/" target="_blank" rel="noopener">
-          <span class="tool-name">Wispr Flow</span>
-          <span class="tool-ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-        </a>
-        <a class="tool-row" href="https://www.typeless.com/" target="_blank" rel="noopener">
-          <span class="tool-name">Typeless</span>
-          <span class="tool-ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-        </a>
-        <a class="tool-row" href="https://shurufa.doubao.com/pc" target="_blank" rel="noopener">
-          <span class="tool-name">Doubao Shurufa</span>
-          <span class="tool-ext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
-        </a>
-      </div>
+    <div class="cat-label"><span class="tick">//</span> voice input</div>
+    <div class="clist">
+      <a class="crow" href="https://wisprflow.ai/" target="_blank" rel="noopener">
+        <div class="ctile">Wi</div>
+        <div class="cinfo"><span class="cname">Wispr Flow</span><span class="cdom">wisprflow.ai</span></div>
+        <span class="cpill">Open →</span>
+      </a>
+      <a class="crow" href="https://www.typeless.com/" target="_blank" rel="noopener">
+        <div class="ctile">Ty</div>
+        <div class="cinfo"><span class="cname">Typeless</span><span class="cdom">typeless.com</span></div>
+        <span class="cpill">Open →</span>
+      </a>
+      <a class="crow" href="https://shurufa.doubao.com/pc" target="_blank" rel="noopener">
+        <div class="ctile">Db</div>
+        <div class="cinfo"><span class="cname">Doubao Shurufa</span><span class="cdom">shurufa.doubao.com</span></div>
+        <span class="cpill">Open →</span>
+      </a>
     </div>
   </section>
 
@@ -367,12 +360,6 @@
       try{parent.postMessage({jwScrollTo:target.offsetTop},'*');}catch(err){}
     });
   });
-  function toggleGroup(btn){
-    var body=btn.nextElementSibling;
-    var open=body.classList.toggle('open');
-    btn.classList.toggle('open',open);
-    jwPostHeight();
-  }
   function toggleCards(){
     var el=document.getElementById('cards-extra');
     var btn=document.getElementById('expand-btn');
