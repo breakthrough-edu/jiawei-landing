@@ -128,6 +128,15 @@
   .soc:hover{color:var(--signal);border-color:rgba(255,102,0,.45)}
   .soc svg{width:14px;height:14px}
 
+  /* page nav */
+  html{scroll-behavior:smooth}
+  .pagenav{display:flex;flex-direction:column;gap:6px}
+  .pnav-item{display:flex;align-items:center;gap:10px;padding:10px 13px;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:.15s}
+  .pnav-item:hover{border-color:rgba(255,102,0,.45);background:rgba(255,102,0,.05)}
+  .pnav-num{font-family:var(--mono);font-size:11px;color:var(--signal);min-width:18px}
+  .pnav-title{font-size:13.5px;color:#d2d2da;flex:1}
+  .pnav-arrow{font-family:var(--mono);font-size:12px;color:var(--dim)}
+
   /* footer */
   footer{margin-top:46px;text-align:center;border-top:1px solid var(--border);padding-top:22px}
   footer .meta{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.04em}
@@ -145,14 +154,20 @@
     <p class="doctrine"><b>Practitioner</b>, not motivator.</p>
   </header>
 
-  <!-- 2. START HERE -->
+  <!-- 2. PAGE NAV -->
   <section>
-    <div class="label"><span class="tick">//</span> start here</div>
-    <p class="start"><b>Everything I share, in one place.</b> All free.</p>
+    <div class="label"><span class="tick">//</span> on this page</div>
+    <nav class="pagenav">
+      <a class="pnav-item" href="#skills"><span class="pnav-num">01</span><span class="pnav-title">Shipped Skills</span><span class="pnav-arrow">↓</span></a>
+      <a class="pnav-item" href="#videos"><span class="pnav-num">02</span><span class="pnav-title">Videos</span><span class="pnav-arrow">↓</span></a>
+      <a class="pnav-item" href="#resources"><span class="pnav-num">03</span><span class="pnav-title">Free Resources</span><span class="pnav-arrow">↓</span></a>
+      <a class="pnav-item" href="#next"><span class="pnav-num">04</span><span class="pnav-title">Next Big Thing</span><span class="pnav-arrow">↓</span></a>
+      <a class="pnav-item" href="#links"><span class="pnav-num">05</span><span class="pnav-title">All My Links</span><span class="pnav-arrow">↓</span></a>
+    </nav>
   </section>
 
   <!-- 3. SHIPPED SKILLS -->
-  <section>
+  <section id="skills">
     <div class="label"><span class="tick">//</span> shipped skills <span class="sub">install in one line</span></div>
 
     <article class="card">
@@ -221,27 +236,27 @@
     </article>
   </section>
 
-  <!-- 4. WATCH -->
-  <section>
-    <div class="label"><span class="tick">//</span> watch</div>
+  <!-- 4. VIDEOS -->
+  <section id="videos">
+    <div class="label"><span class="tick">//</span> videos</div>
     <div class="soon"><span class="pill">soon</span><span class="txt">Build-along videos are in the works -- I'm shooting the first ones now.</span></div>
   </section>
 
   <!-- 5. FREE RESOURCES -->
-  <section>
+  <section id="resources">
     <div class="label"><span class="tick">//</span> free resources</div>
     <div class="soon"><span class="pill">soon</span><span class="txt">Guides, prompt packs and playbooks are on the way.</span></div>
   </section>
 
-  <!-- 6. WHAT'S NEXT -->
-  <section>
-    <div class="label"><span class="tick">//</span> what's next</div>
+  <!-- 6. NEXT BIG THING -->
+  <section id="next">
+    <div class="label"><span class="tick">//</span> next big thing</div>
     <div class="soon"><span class="pill">soon</span><span class="txt">Live sessions and events will land here.</span></div>
   </section>
 
-  <!-- 7. ELSEWHERE -->
-  <section>
-    <div class="label"><span class="tick">//</span> elsewhere</div>
+  <!-- 7. ALL MY LINKS -->
+  <section id="links">
+    <div class="label"><span class="tick">//</span> all my links</div>
     <div class="socs">
       <a class="soc" href="https://www.facebook.com/jwei.strategist" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V7c0-1 .3-1.5 1.6-1.5H18V2h-3c-3 0-4.5 1.6-4.5 4.5V9H8v3.5h2.5V22H14v-9.5h2.6l.4-3.5Z"/></svg>Facebook</a>
       <a class="soc" href="https://www.instagram.com/jiawei_strategist/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a>
