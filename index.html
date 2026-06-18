@@ -357,6 +357,16 @@
   function fallback(t){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(a);}
 </script>
 <script>
+  document.querySelectorAll('.pnav-item').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var id=this.getAttribute('href').replace('#','');
+      var target=document.getElementById(id);
+      if(!target)return;
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+      try{parent.postMessage({jwScrollTo:target.offsetTop},'*');}catch(err){}
+    });
+  });
   function toggleGroup(btn){
     var body=btn.nextElementSibling;
     var open=body.classList.toggle('open');
