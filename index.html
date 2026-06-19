@@ -234,6 +234,7 @@
         view on GitHub &rarr;</a>
     </article>
 
+    <div class="cards-extra" id="cards-extra">
     <article class="card">
       <h3>youtube-transcript-ingestion</h3>
       <p class="desc">Any YouTube video into a clean markdown transcript, ready to use.</p>
@@ -247,7 +248,6 @@
         view on GitHub &rarr;</a>
     </article>
 
-    <div class="cards-extra" id="cards-extra">
     <article class="card">
       <h3>douyin-transcript</h3>
       <p class="desc">A 抖音 link into a readable Chinese transcript. Local Whisper, free.</p>
@@ -274,7 +274,7 @@
         view on GitHub &rarr;</a>
     </article>
     </div><!-- /cards-extra -->
-    <button class="expand-btn" id="expand-btn" onclick="toggleCards()">
+    <button class="expand-btn" id="expand-btn" onclick="toggleExtra('cards-extra','expand-btn','show all 5 skills','show less')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       show all 5 skills
     </button>
@@ -290,6 +290,7 @@
   <section id="tools">
     <div class="label"><span class="tick">//</span> tools i use</div>
     <div class="cat-label"><span class="tick">//</span> voice input</div>
+    <div class="cards-extra" id="voice-extra">
     <div class="clist">
       <a class="crow" href="https://wisprflow.ai/" target="_blank" rel="noopener">
         <div class="ctile">Wi</div>
@@ -307,6 +308,11 @@
         <span class="cpill">Open →</span>
       </a>
     </div>
+    </div>
+    <button class="expand-btn" id="voice-expand-btn" onclick="toggleExtra('voice-extra','voice-expand-btn','show all 3 tools','show less')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      show all 3 tools
+    </button>
   </section>
 
   <!-- 7. FREE RESOURCES -->
@@ -371,14 +377,14 @@
       try{parent.postMessage({jwScrollTo:target.offsetTop},'*');}catch(err){}
     });
   });
-  function toggleCards(){
-    var el=document.getElementById('cards-extra');
-    var btn=document.getElementById('expand-btn');
+  function toggleExtra(extraId,btnId,openLabel,closeLabel){
+    var el=document.getElementById(extraId);
+    var btn=document.getElementById(btnId);
     var open=el.classList.toggle('open');
     btn.classList.toggle('open',open);
-    btn.innerHTML=open
-      ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg> show less'
-      :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> show all 5 skills';
+    var up='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg> ';
+    var down='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> ';
+    btn.innerHTML=open?up+closeLabel:down+openLabel;
     jwPostHeight();
   }
   function jwPostHeight(){try{parent.postMessage({jwHeight:document.documentElement.scrollHeight},'*');}catch(e){}}
