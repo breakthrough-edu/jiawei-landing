@@ -97,6 +97,13 @@
   .prow .pc{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
   .prow .pa{color:var(--dim)}
 
+  /* reel (portrait video) */
+  .reel{position:relative;display:block;width:218px;max-width:74%;margin:0 auto;aspect-ratio:9/16;border-radius:16px;overflow:hidden;border:1px solid var(--border-strong);background:#101016 50%/cover no-repeat;transition:.15s}
+  .reel:hover{border-color:rgba(255,102,0,.5)}
+  .reel .rplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--signal);display:flex;align-items:center;justify-content:center}
+  .reel .rplay svg{width:17px;height:17px;color:var(--signal-ink);margin-left:2px}
+  .rtitle{text-align:center;font-size:14.5px;font-weight:500;color:#e9e9ee;line-height:1.5;margin:13px auto 2px;max-width:30ch}
+
   /* resources */
   .res{display:flex;align-items:center;gap:12px;padding:13px 2px;border-bottom:1px solid var(--border);text-decoration:none;transition:.15s}
   .res:last-child{border-bottom:none}
@@ -283,7 +290,13 @@
   <!-- 5. VIDEOS -->
   <section id="videos">
     <div class="label"><span class="tick">//</span> videos</div>
-    <div class="soon"><span class="pill">soon</span><span class="txt">Build-along videos are in the works -- I'm shooting the first ones now.</span></div>
+    <a class="reel" href="https://www.instagram.com/p/DZ4sJPXCEyw/" target="_blank" rel="noopener" style="background-image:url(files/reel-ep1-cover.jpg)">
+      <span class="rplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+    </a>
+    <p class="rtitle">用好 AI 的第一步, 其实只是换一个输入法</p>
+    <div class="plist">
+      <a class="prow" href="https://www.instagram.com/jiawei_strategist/" target="_blank" rel="noopener"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span class="pt">Follow for new episodes</span><span class="pc">@jiawei_strategist</span><span class="pa">&rarr;</span></a>
+    </div>
   </section>
 
   <!-- 6. TOOLS I USE -->
