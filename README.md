@@ -2,7 +2,7 @@
 
 Static personal landing page for Jia Wei (brand strategist x AI) -- "Signal in the Dark" design.
 
-Hosted on **GitHub Pages**, embedded into the GoHighLevel page at `kalozedu.com/jiawei-profile`
+Hosted on **GitHub Pages**, embedded into the GoHighLevel page at `kalozedu.com/breakthrough-lab`
 as a full-width auto-resizing `<iframe>`. The GHL page is just a shell; all content lives here.
 
 ## Files
